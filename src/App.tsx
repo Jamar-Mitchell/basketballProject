@@ -1,9 +1,9 @@
 import "./App.css";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-import Main from "./Main";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Disclaimer from "./Disclaimer";
-import Results from "./Results";
+import Main from "./pages/Main";
+import { Routes, Route, HashRouter } from "react-router-dom";
+import Disclaimer from "./pages/Disclaimer";
+import Results from "./pages/Results";
 
 const darkTheme = createTheme({
   palette: {
@@ -16,13 +16,13 @@ function App() {
     <div className="App">
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
-        <Router>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Disclaimer />}></Route>
             <Route path="/main" element={<Main />}></Route>
             <Route path="/results" element={<Results />}></Route>
           </Routes>
-        </Router>
+        </HashRouter>
       </ThemeProvider>
     </div>
   );

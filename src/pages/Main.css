@@ -1,0 +1,9 @@
+
+.mainContainer{
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 30px;
+    padding: 20px;
+}

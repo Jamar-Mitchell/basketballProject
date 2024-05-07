@@ -1,6 +1,5 @@
-import MediaCard from "../PlayerCard";
 import "./Main.css";
-import PlayerRow from "../PlayerRow";
+import PlayerRow from "../components/PlayerRow";
 import ProgressBar from "../components/ProgressBar";
 
 export default function Main() {

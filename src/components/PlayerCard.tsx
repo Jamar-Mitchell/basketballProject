@@ -5,6 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Divider, Grid, Paper, styled } from "@mui/material";
 import "./PlayerCard.css";
+import { Player } from "../types/player";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "none",
@@ -14,9 +15,14 @@ const Item = styled(Paper)(({ theme }) => ({
   borderRadius: "unset",
 }));
 
-export default function PlayerCard() {
+type PlayerCardType = {
+  playerData: Player;
+  onClick: () => void;
+};
+export default function PlayerCard(props: PlayerCardType) {
+  const { playerData, onClick } = props;
   const handlePlayerClick = () => {
-    console.log("player clicked");
+    onClick();
   };
 
   return (
@@ -29,7 +35,7 @@ export default function PlayerCard() {
         />
         <CardContent className="playerCardContent">
           <Typography gutterBottom variant="h5" component="div">
-            Player Name
+            {`${playerData.firstName} ${playerData.lastName}`}
           </Typography>
           <Divider component="li" />
           <Grid container spacing={2}>

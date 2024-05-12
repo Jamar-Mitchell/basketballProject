@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea, Divider, Grid, Paper, styled } from "@mui/material";
 import "./PlayerCard.css";
 import { Player } from "../types/player";
+import { getPlayerPhoto } from "../data/helper";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "none",
@@ -35,7 +36,7 @@ export default function PlayerCard(props: PlayerCardType) {
         />
         <CardContent className="playerCardContent">
           <Typography gutterBottom variant="h5" component="div">
-            {`${playerData.firstName} ${playerData.lastName}`}
+            {`${playerData.playerName}`}
           </Typography>
           <Divider component="li" />
           <Grid container spacing={2}>

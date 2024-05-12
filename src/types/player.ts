@@ -1,5 +1,21 @@
 export type Player = {
-  firstName: string;
-  lastName: string;
+  playerName: string;
   playerNumber: string;
+  position: string;
+  teamName: string;
+  age: string;
+  height: string;
+  weight: string;
+  nationality: string;
+  gp: string;
+  mpg: string;
+  ppg: string;
+  rpg: string;
+  apg: string;
+  spg: string;
+  bpg: string;
+  fg: string;
+  ft: string;
+  threePt: string;
+  topg: string;
 };

@@ -2,65 +2,116 @@ import React from "react";
 import PlayerCard from "./PlayerCard";
 import "./PlayerRow.css";
 import { Player } from "../types/player";
-import { players } from "../data/players";
 import {
   removeComparedPlayers,
   selectRandomPlayers,
   submitResults,
+  generatePlayerComparisons,
 } from "../data/helper";
 import { useNavigate } from "react-router-dom";
+import { getPlayerData } from "../data/api";
+import { players } from "../data/players";
+import ProgressBar from "./ProgressBar";
 
 export default function PlayerRow() {
   const navigate = useNavigate();
 
-  const playerSet = players;
+  const [playerSet, setPlayerSet] = React.useState<Player[]>(players);
 
-  const [player, setPlayers] = React.useState<Player[]>(
-    selectRandomPlayers(playerSet)
+  const [playerComparisons, setPlayerComparisons] = React.useState<
+    [Player, Player][]
+  >(generatePlayerComparisons(playerSet));
+
+  const [totalComparisons, setTotalComparisons] = React.useState(0);
+
+  const [currentPlayer, setCurrentPlayers] = React.useState<Player[]>(
+    selectRandomPlayers(playerComparisons)
   );
+
+  // const [currentPlayer, setCurrentPlayers] = React.useState<Player[]>([]);
+
+  React.useEffect(() => {
+    const fetchPlayerData = async () => {
+      try {
+        const playerSetData = await getPlayerData();
+        setPlayerSet(playerSetData);
+        setPlayerComparisons(generatePlayerComparisons(playerSetData));
+      } catch (error) {
+        console.error("Error fetching player data:", error);
+      }
+    };
+
+    fetchPlayerData();
+  }, []);
+
+  React.useEffect(() => {
+    setCurrentPlayers(selectRandomPlayers(playerComparisons));
+    setTotalComparisons(playerComparisons.length);
+  }, [playerComparisons]);
 
   const [results, setResults] = React.useState<string[]>([]);
 
-  console.log(playerSet);
-
   const player1Selected = () => {
-    console.log("player 1 selected");
+    console.log("currentPlayer 1 selected");
     results.push(
-      `${player[0]?.firstName} selected over ${player[1]?.firstName}`
+      `${currentPlayer[0]?.playerName} selected over ${currentPlayer[1]?.playerName}`
     );
     setResults(results);
 
-    if (playerSet.length <= 2) {
+    if (playerComparisons.length <= 2) {
       submitResults(results);
+      //todo: set currentPlayer set back to original
+      // setPlayerSet(initialSet);
       navigate("/results");
     } else {
-      removeComparedPlayers(player[0], player[1], playerSet);
-      setPlayers(selectRandomPlayers(playerSet));
+      removeComparedPlayers(
+        [currentPlayer[0], currentPlayer[1]],
+        playerComparisons
+      );
+      setCurrentPlayers(selectRandomPlayers(playerComparisons));
     }
   };
 
   const player2Selected = () => {
-    console.log("player 2 selected");
+    console.log("currentPlayer 2 selected");
 
     results.push(
-      `${player[1]?.firstName} selected over ${player[0]?.firstName}`
+      `${currentPlayer[1]?.playerName} selected over ${currentPlayer[0]?.playerName}`
     );
     setResults(results);
 
-    if (playerSet.length <= 2) {
+    if (playerComparisons.length <= 2) {
       submitResults(results);
+      //todo: set currentPlayer set back to original
+      // setPlayerSet(initialSet);
+
       navigate("/results");
     } else {
-      removeComparedPlayers(player[0], player[1], playerSet);
-      setPlayers(selectRandomPlayers(playerSet));
+      removeComparedPlayers(
+        [currentPlayer[0], currentPlayer[1]],
+        playerComparisons
+      );
+      setCurrentPlayers(selectRandomPlayers(playerComparisons));
     }
   };
 
   return (
-    <div className="playersContainer">
-      <PlayerCard onClick={() => player1Selected()} playerData={player[0]} />
-      <h1 style={{ alignSelf: "center" }}>OR</h1>
-      <PlayerCard onClick={() => player2Selected()} playerData={player[1]} />
-    </div>
+    <>
+      <ProgressBar
+        comparisonsleft={playerComparisons.length}
+        totalComparisons={totalComparisons}
+      />
+      <div className="playersContainer">
+        <PlayerCard
+          onClick={() => player1Selected()}
+          playerData={currentPlayer[0]}
+        />
+        <h1 style={{ alignSelf: "center" }}>OR</h1>
+        <PlayerCard
+          onClick={() => player2Selected()}
+          playerData={currentPlayer[1]}
+        />
+      </div>
+    </>
   );
 }

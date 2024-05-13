@@ -63,7 +63,7 @@ export default function PlayerRow() {
     const player1 = currentPlayer[0];
     const player2 = currentPlayer[1];
 
-    console.log("currentPlayer 1 selected");
+    // console.log("currentPlayer 1 selected");
     // results.push(`${player1?.playerName} selected over ${player2?.playerName}`);
     addToResults(player1, player2, results);
     setResults(results);
@@ -84,7 +84,7 @@ export default function PlayerRow() {
     const player1 = currentPlayer[0];
     const player2 = currentPlayer[1];
 
-    console.log("currentPlayer 2 selected");
+    // console.log("currentPlayer 2 selected");
 
     // results.push(`${player2?.playerName} selected over ${player1?.playerName}`);
     addToResults(player2, player1, results);

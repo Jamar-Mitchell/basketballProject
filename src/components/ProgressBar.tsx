@@ -29,7 +29,7 @@ export default function ProgressBar(props: ProgressBarProps) {
   // }, []);
 
   const progress = 100 - (props.comparisonsleft / props.totalComparisons) * 100;
-  console.log("progress", progress);
+  // console.log("progress", progress);
 
   return (
     <>

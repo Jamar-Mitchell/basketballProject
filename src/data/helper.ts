@@ -1,5 +1,6 @@
 import { playerResults } from "../types/playerResults";
 import { Player } from "../types/player";
+import { postResults } from "./api";
 
 export const getPlayerPhoto = (player: Player) => {
   try {
@@ -49,7 +50,7 @@ export const generatePlayerComparisons = (players: Player[]) => {
     }
   }
 
-  console.log("comparisons", comparisons);
+  // console.log("comparisons", comparisons);
   return comparisons;
 };
 
@@ -85,10 +86,12 @@ export const removeComparedPlayers = (
 //   }
 // };
 
-export const submitResults = (results: playerResults) => {
+export const submitResults = async (results: playerResults) => {
   if (process.env.NODE_ENV === "development") {
     // Code to run when app is running locally , log to console
     console.log(results);
+
+    await postResults(results);
   } else {
     //send results to google sheets
   }

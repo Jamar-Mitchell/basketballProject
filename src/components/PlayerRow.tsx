@@ -7,16 +7,17 @@ import {
   selectRandomPlayers,
   submitResults,
   generatePlayerComparisons,
+  addToResults,
 } from "../data/helper";
 import { useNavigate } from "react-router-dom";
 import { getPlayerData } from "../data/api";
-import { players } from "../data/players";
 import ProgressBar from "./ProgressBar";
+import { playerResults } from "../types/playerResults";
 
 export default function PlayerRow() {
   const navigate = useNavigate();
 
-  const [playerSet, setPlayerSet] = React.useState<Player[]>(players);
+  const [playerSet, setPlayerSet] = React.useState<Player[]>([]);
 
   const [playerComparisons, setPlayerComparisons] = React.useState<
     [Player, Player][]
@@ -28,6 +29,13 @@ export default function PlayerRow() {
     selectRandomPlayers(playerComparisons)
   );
 
+  const clearStates = () => {
+    setResults({});
+    setPlayerSet([]);
+    setPlayerComparisons([]);
+    setTotalComparisons(0);
+    setCurrentPlayers([]);
+  };
   // const [currentPlayer, setCurrentPlayers] = React.useState<Player[]>([]);
 
   React.useEffect(() => {
@@ -49,53 +57,54 @@ export default function PlayerRow() {
     setTotalComparisons(playerComparisons.length);
   }, [playerComparisons]);
 
-  const [results, setResults] = React.useState<string[]>([]);
+  const [results, setResults] = React.useState<playerResults>({});
 
   const player1Selected = () => {
+    const player1 = currentPlayer[0];
+    const player2 = currentPlayer[1];
+
     console.log("currentPlayer 1 selected");
-    results.push(
-      `${currentPlayer[0]?.playerName} selected over ${currentPlayer[1]?.playerName}`
-    );
+    // results.push(`${player1?.playerName} selected over ${player2?.playerName}`);
+    addToResults(player1, player2, results);
     setResults(results);
 
     if (playerComparisons.length <= 2) {
       submitResults(results);
+      clearStates();
       //todo: set currentPlayer set back to original
       // setPlayerSet(initialSet);
       navigate("/results");
     } else {
-      removeComparedPlayers(
-        [currentPlayer[0], currentPlayer[1]],
-        playerComparisons
-      );
+      removeComparedPlayers([player1, player2], playerComparisons);
       setCurrentPlayers(selectRandomPlayers(playerComparisons));
     }
   };
 
   const player2Selected = () => {
+    const player1 = currentPlayer[0];
+    const player2 = currentPlayer[1];
+
     console.log("currentPlayer 2 selected");
 
-    results.push(
-      `${currentPlayer[1]?.playerName} selected over ${currentPlayer[0]?.playerName}`
-    );
+    // results.push(`${player2?.playerName} selected over ${player1?.playerName}`);
+    addToResults(player2, player1, results);
     setResults(results);
 
     if (playerComparisons.length <= 2) {
       submitResults(results);
+      clearStates();
+
       //todo: set currentPlayer set back to original
       // setPlayerSet(initialSet);
 
       navigate("/results");
     } else {
-      removeComparedPlayers(
-        [currentPlayer[0], currentPlayer[1]],
-        playerComparisons
-      );
+      removeComparedPlayers([player1, player2], playerComparisons);
       setCurrentPlayers(selectRandomPlayers(playerComparisons));
     }
   };
 
-  return (
+  return currentPlayer ? (
     <>
       <ProgressBar
         comparisonsleft={playerComparisons.length}
@@ -113,5 +122,7 @@ export default function PlayerRow() {
         />
       </div>
     </>
+  ) : (
+    <></>
   );
 }

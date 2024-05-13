@@ -14,7 +14,7 @@ export const getPlayerData = async (): Promise<Player[]> => {
 export const postResults = async (resultsData: playerResults) => {
   try {
     const res = await fetch(
-      "https://script.google.com/macros/s/AKfycbwJAOeRHeqA2Es0VWpsW3mW3dD9_-E2nqiGbgteEcpKa67JSHSp58TZjN5RjCJNZ2rw/exec",
+      "https://script.google.com/macros/s/AKfycbzQ7A_l_WBFTBcSjkPD-dnHDL5bHxK6cl0TXwltDuysU01I75RPr8G2AheEdbf-5lqu3g/exec",
       {
         method: "POST",
 

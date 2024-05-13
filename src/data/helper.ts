@@ -90,10 +90,10 @@ export const submitResults = async (results: playerResults) => {
   if (process.env.NODE_ENV === "development") {
     // Code to run when app is running locally , log to console
     console.log(results);
-
     await postResults(results);
   } else {
     //send results to google sheets
+    await postResults(results);
   }
 };
 

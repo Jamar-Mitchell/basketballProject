@@ -1,16 +1,29 @@
 {
   "files": {
     "main.css": "/basketballProject/static/css/main.2001fd64.css",
-    "main.js": "/basketballProject/static/js/main.474e3856.js",
+    "main.js": "/basketballProject/static/js/main.41e93b11.js",
     "static/js/453.49831b4c.chunk.js": "/basketballProject/static/js/453.49831b4c.chunk.js",
     "static/media/player.jpg": "/basketballProject/static/media/player.0591614fe94373546cb2.jpg",
+    "static/media/player.webp": "/basketballProject/static/media/player.f6a4b1edbca54e283e25.webp",
+    "static/media/williams.jpg": "/basketballProject/static/media/williams.7ffbb272cddca7568905.jpg",
+    "static/media/holland.png": "/basketballProject/static/media/holland.f63fa9a9aa7ab6a8d83d.png",
+    "static/media/shepphard.png": "/basketballProject/static/media/shepphard.244ef9048f7edaaeb778.png",
+    "static/media/missi.png": "/basketballProject/static/media/missi.4e31ec713f854b3b3203.png",
+    "static/media/dillingham.png": "/basketballProject/static/media/dillingham.f3062be4f9ea8afbace1.png",
+    "static/media/clingan.png": "/basketballProject/static/media/clingan.4b7abccef39cba61c013.png",
+    "static/media/carter.png": "/basketballProject/static/media/carter.55e2e9ac393ca7975b93.png",
+    "static/media/chomche.jpg": "/basketballProject/static/media/chomche.166bef59875c02810699.jpg",
+    "static/media/filipowski.png": "/basketballProject/static/media/filipowski.3279615eea966f1ba640.png",
+    "static/media/buzelis.jpg": "/basketballProject/static/media/buzelis.a913483a5c4f8812f101.jpg",
+    "static/media/furphy.jpg": "/basketballProject/static/media/furphy.769a49068b7db35f2a6d.jpg",
+    "static/media/rissacher.jpg": "/basketballProject/static/media/rissacher.291852e4f2505358b3d0.jpg",
     "index.html": "/basketballProject/index.html",
     "main.2001fd64.css.map": "/basketballProject/static/css/main.2001fd64.css.map",
-    "main.474e3856.js.map": "/basketballProject/static/js/main.474e3856.js.map",
+    "main.41e93b11.js.map": "/basketballProject/static/js/main.41e93b11.js.map",
     "453.49831b4c.chunk.js.map": "/basketballProject/static/js/453.49831b4c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2001fd64.css",
-    "static/js/main.474e3856.js"
+    "static/js/main.41e93b11.js"
   ]
 }

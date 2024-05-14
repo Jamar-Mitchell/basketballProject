@@ -18,4 +18,5 @@ export type Player = {
   ft: string;
   threePt: string;
   topg: string;
+  pictureName?: string;
 };

@@ -31,8 +31,8 @@ export default function PlayerCard(props: PlayerCardType) {
       <CardActionArea onClick={() => handlePlayerClick()}>
         <CardMedia
           sx={{ minHeight: 300 }}
-          image={require("../images/player.jpg")}
-          title="green iguana"
+          image={require(`../images/${playerData.pictureName}`)}
+          title={`${playerData.playerName}`}
         />
         <CardContent className="playerCardContent">
           <Typography gutterBottom variant="h5" component="div">

@@ -3,7 +3,7 @@ import { playerResults } from "../types/playerResults";
 
 export const getPlayerData = async (): Promise<Player[]> => {
   const res = await fetch(
-    "https://script.google.com/macros/s/AKfycbx88dzmTV9WSmJNCAt9cQo61aDSO2wpf3Y1zxgZlOOuBe43RmiLYGqaouLBPlCM4aZyeA/exec"
+    "https://script.google.com/macros/s/AKfycbxDoafpsuCYyrRmm_bNfCykuspKNQVRefFSRCcdVfviixv4brKuT1b30oBJWG6O3GRBnw/exec"
   );
 
   const { data } = await res.json();

@@ -35,22 +35,61 @@ export default function PlayerCard(props: PlayerCardType) {
           title={`${playerData.playerName}`}
         />
         <CardContent className="playerCardContent">
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="subtitle1" component="div">
             {`${playerData.playerName}`}
           </Typography>
-          <Divider component="li" />
-          <Grid container spacing={2}>
-            <Grid xs={8}>
-              <Item>xs=8</Item>
+          <Divider />
+          <Typography gutterBottom variant="subtitle2">
+            {`${playerData.nationality}`}
+          </Typography>
+          <Typography gutterBottom variant="subtitle2">
+            {`${playerData.teamName}`}
+          </Typography>
+          <Typography gutterBottom variant="subtitle2">
+            Physical:
+          </Typography>
+          <Grid
+            container
+            rowSpacing={1}
+            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+          >
+            <Grid item xs={4}>
+              <Item>{`Height: ${playerData.height}`}</Item>
             </Grid>
-            <Grid xs={4}>
-              <Item>xs=4</Item>
+            <Grid item xs={4}>
+              <Item>{`Weight: ${playerData.weight}`}</Item>
             </Grid>
-            <Grid xs={4}>
-              <Item>xs=4</Item>
+            <Grid item xs={4}>
+              <Item>{`BPG: ${playerData.bpg}`}</Item>
             </Grid>
-            <Grid xs={8}>
-              <Item>xs=8</Item>
+            <Grid item xs={4}>
+              <Item>{`GP: ${playerData.gp}`}</Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>{`Min/G: ${playerData.mpg}`}</Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>{`PPG: ${playerData.ppg}`}</Item>
+            </Grid>
+
+            <Grid item xs={4}>
+              <Item>{`RPG: ${playerData.rpg}`}</Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>{`FT: ${playerData.ft}`}</Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>{`APG: ${playerData.apg}`}</Item>
+            </Grid>
+
+            <Grid item xs={4}>
+              <Item>{`3PT%: ${playerData.threePt}`}</Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>{`SPG: ${playerData.spg}`}</Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>{`TOPG: ${playerData.topg}`}</Item>
             </Grid>
           </Grid>
         </CardContent>

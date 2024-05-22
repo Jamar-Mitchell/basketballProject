@@ -1,6 +1,7 @@
-import { playerResults } from "../types/playerResults";
+import { PlayerResults } from "../types/playerResults";
 import { Player } from "../types/player";
-import { postResults } from "./api";
+import { Results } from "../context/ResultContext";
+import { postData, postPlayerResults } from "./api";
 
 export const getPlayerPhoto = (player: Player) => {
   try {
@@ -86,21 +87,23 @@ export const removeComparedPlayers = (
 //   }
 // };
 
-export const submitResults = async (results: playerResults) => {
+export const submitResults = async (results: Results) => {
   if (process.env.NODE_ENV === "development") {
     // Code to run when app is running locally , log to console
     console.log(results);
-    await postResults(results);
+    // await postPlayerResults(results);
+    await postData(results);
   } else {
     //send results to google sheets
-    await postResults(results);
+    // await postPlayerResults(results);
+    await postData(results);
   }
 };
 
 export const addToResults = (
   winner: Player,
   loser: Player,
-  results: playerResults
+  results: PlayerResults
 ) => {
   // Check if the winner is already in the results
   if (!(winner.playerName in results)) {

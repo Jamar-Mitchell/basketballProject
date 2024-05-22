@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import PlayerCard from "./PlayerCard";
 import "./PlayerRow.css";
 import { Player } from "../types/player";
@@ -12,10 +12,12 @@ import {
 import { useNavigate } from "react-router-dom";
 import { getPlayerData } from "../data/api";
 import ProgressBar from "./ProgressBar";
-import { playerResults } from "../types/playerResults";
+import { PlayerResults } from "../types/playerResults";
+import { ResultContext } from "../context/ResultContext";
 
 export default function PlayerRow() {
   const navigate = useNavigate();
+  const { results, updateResults } = useContext(ResultContext);
 
   const [playerSet, setPlayerSet] = React.useState<Player[]>([]);
 
@@ -30,7 +32,7 @@ export default function PlayerRow() {
   );
 
   const clearStates = () => {
-    setResults({});
+    setPlayerResults({});
     setPlayerSet([]);
     setPlayerComparisons([]);
     setTotalComparisons(0);
@@ -57,23 +59,27 @@ export default function PlayerRow() {
     setTotalComparisons(playerComparisons.length);
   }, [playerComparisons]);
 
-  const [results, setResults] = React.useState<playerResults>({});
+  const [playerResults, setPlayerResults] = React.useState<PlayerResults>({});
 
   const player1Selected = () => {
     const player1 = currentPlayer[0];
     const player2 = currentPlayer[1];
 
     // console.log("currentPlayer 1 selected");
-    // results.push(`${player1?.playerName} selected over ${player2?.playerName}`);
-    addToResults(player1, player2, results);
-    setResults(results);
+    // playerResults.push(`${player1?.playerName} selected over ${player2?.playerName}`);
+    addToResults(player1, player2, playerResults);
+    setPlayerResults(playerResults);
 
     if (playerComparisons.length <= 2) {
-      submitResults(results);
+      submitResults({
+        user: results.user,
+        demographics: results.demographics,
+        playerResults,
+      });
       clearStates();
       //todo: set currentPlayer set back to original
       // setPlayerSet(initialSet);
-      navigate("/results");
+      navigate("/playerResults");
     } else {
       removeComparedPlayers([player1, player2], playerComparisons);
       setCurrentPlayers(selectRandomPlayers(playerComparisons));
@@ -86,12 +92,16 @@ export default function PlayerRow() {
 
     // console.log("currentPlayer 2 selected");
 
-    // results.push(`${player2?.playerName} selected over ${player1?.playerName}`);
-    addToResults(player2, player1, results);
-    setResults(results);
+    // playerResults.push(`${player2?.playerName} selected over ${player1?.playerName}`);
+    addToResults(player2, player1, playerResults);
+    setPlayerResults(playerResults);
 
     if (playerComparisons.length <= 2) {
-      submitResults(results);
+      submitResults({
+        user: results.user,
+        demographics: results.demographics,
+        playerResults,
+      });
       clearStates();
 
       //todo: set currentPlayer set back to original

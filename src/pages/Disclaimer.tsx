@@ -1,22 +1,79 @@
-import { Button, Checkbox, Divider, Paper } from "@mui/material";
+import { Button, Checkbox, Divider, Paper, TextField } from "@mui/material";
 import "./Disclaimer.css";
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { ResultContext } from "../context/ResultContext";
 
 export default function Disclaimer() {
+  const { results, updateResults } = useContext(ResultContext);
+
   const [ageChecked, setAgeChecked] = React.useState(false);
   const [consentChecked, setConsentChecked] = React.useState(false);
+  const [emailValue, setEmailValue] = React.useState("");
+  const [emailError, setEmailError] = React.useState(false);
   const navigate = useNavigate();
 
   const redirect = (path: string) => {
     navigate(path);
   };
+
   const handleAgeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAgeChecked(event.target.checked);
+    if (!event.target.checked) {
+      setConsentChecked(false);
+      setEmailValue("");
+      setEmailError(false);
+    }
   };
 
   const handleConsentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setConsentChecked(event.target.checked);
+    if (ageChecked) {
+      setConsentChecked(event.target.checked);
+      if (!event.target.checked) {
+        setEmailValue("");
+        setEmailError(false);
+      }
+    } else {
+      setConsentChecked(false);
+    }
+  };
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmailValue(event.target.value);
+    if (emailError) {
+      setEmailError(false);
+    }
+  };
+
+  const validateEmail = (email: string) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
+  const handleContinue = () => {
+    if (consentChecked && !validateEmail(emailValue)) {
+      setEmailError(true);
+      return;
+    }
+
+    const data: {
+      ageChecked: boolean;
+      consentChecked: boolean;
+      emailValue: string;
+    } = {
+      ageChecked,
+      consentChecked,
+      emailValue,
+    };
+
+    updateResults({
+      user: data,
+      demographics: results.demographics,
+      playerResults: results.playerResults,
+    });
+
+    console.log(results);
+    redirect("/questionnaire");
   };
 
   return (
@@ -137,7 +194,7 @@ export default function Disclaimer() {
               Once all of the data has been collected and analyzed, the results
               of the study will be available to be sent to those participants
               who have elected to receive them. All data will be anonymized.
-              Coaches will be able to view the accuracy of the group as a hole,
+              Coaches will be able to view the accuracy of the group as a whole,
               as well as how specific subgroups performed on the task compared
               to others.
             </p>
@@ -159,28 +216,55 @@ export default function Disclaimer() {
             </p>
 
             <p>
-              <Checkbox aria-label="ofAge" onChange={handleAgeChange} /> I agree
+              <Checkbox
+                aria-label="ofAge"
+                onChange={handleAgeChange}
+                checked={ageChecked}
+              />{" "}
+              I agree
             </p>
 
             <h3>Consent to Participate Part 2:</h3>
             <p>
-              I consent to be contacted for a follow up variation of the task.
+              I consent to be contacted for a follow-up variation of the task.
             </p>
             <p>
-              <Checkbox aria-label="consent" onChange={handleConsentChange} /> I
-              agree
+              <Checkbox
+                aria-label="consent"
+                onChange={handleConsentChange}
+                checked={consentChecked}
+                disabled={!ageChecked}
+              />{" "}
+              I agree
             </p>
-
-            <Button
-              disabled={!(ageChecked && consentChecked)}
-              variant="contained"
-              onClick={() => redirect("/main")}
-              className="dislaimerBtn"
-            >
-              Continue
-            </Button>
+            {consentChecked && (
+              <TextField
+                label="Email Address"
+                value={emailValue}
+                onChange={handleEmailChange}
+                placeholder="Enter your email"
+                type="email"
+                error={emailError}
+                helperText={
+                  !validateEmail(emailValue) &&
+                  emailValue !== "" &&
+                  "Please enter a valid email address"
+                }
+                required
+              />
+            )}
           </div>
         </Paper>
+        <Button
+          disabled={
+            !ageChecked || (consentChecked && !validateEmail(emailValue))
+          }
+          variant="contained"
+          onClick={handleContinue}
+          className="disclaimerBtn"
+        >
+          Continue
+        </Button>
       </div>
     </>
   );

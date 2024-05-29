@@ -1,5 +1,9 @@
-.playersContainer{
-    display: flex;
-    flex-direction: row;
-    column-gap: 100px;
+.playersContainer {
+  display: flex;
+  flex-direction: row;
+  column-gap: 100px;
+}
+.headerText {
+  word-wrap: normal;
+  max-width: 850px;
 }

@@ -63,7 +63,7 @@ export default function Disclaimer() {
     } = {
       ageChecked,
       consentChecked,
-      emailValue,
+      emailValue: consentChecked ? emailValue : "", // Ensure email is an empty string if consent is not checked
     };
 
     updateResults({
@@ -254,17 +254,17 @@ export default function Disclaimer() {
               />
             )}
           </div>
+          <Button
+            disabled={
+              !ageChecked || (consentChecked && !validateEmail(emailValue))
+            }
+            variant="contained"
+            onClick={handleContinue}
+            className="disclaimerBtn"
+          >
+            Continue
+          </Button>
         </Paper>
-        <Button
-          disabled={
-            !ageChecked || (consentChecked && !validateEmail(emailValue))
-          }
-          variant="contained"
-          onClick={handleContinue}
-          className="disclaimerBtn"
-        >
-          Continue
-        </Button>
       </div>
     </>
   );

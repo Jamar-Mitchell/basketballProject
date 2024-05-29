@@ -14,6 +14,7 @@ import { getPlayerData } from "../data/api";
 import ProgressBar from "./ProgressBar";
 import { PlayerResults } from "../types/playerResults";
 import { ResultContext } from "../context/ResultContext";
+import { Typography } from "@mui/material";
 
 export default function PlayerRow() {
   const navigate = useNavigate();
@@ -79,7 +80,7 @@ export default function PlayerRow() {
       clearStates();
       //todo: set currentPlayer set back to original
       // setPlayerSet(initialSet);
-      navigate("/playerResults");
+      navigate("/results");
     } else {
       removeComparedPlayers([player1, player2], playerComparisons);
       setCurrentPlayers(selectRandomPlayers(playerComparisons));
@@ -116,6 +117,11 @@ export default function PlayerRow() {
 
   return currentPlayer ? (
     <>
+      <Typography gutterBottom variant="subtitle1" className="headerText">
+        Ignoring any of your current (or other current) team needs or draft
+        strategy, which of these two players do you think should be drafted
+        higher?
+      </Typography>
       <ProgressBar
         comparisonsleft={playerComparisons.length}
         totalComparisons={totalComparisons}

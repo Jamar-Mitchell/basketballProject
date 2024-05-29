@@ -14,6 +14,7 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: "center",
   color: theme.palette.text.secondary,
   borderRadius: "unset",
+  boxShadow: "unset",
 }));
 
 type PlayerCardType = {
@@ -30,7 +31,7 @@ export default function PlayerCard(props: PlayerCardType) {
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea onClick={() => handlePlayerClick()}>
         <CardMedia
-          sx={{ minHeight: 300 }}
+          sx={{ minHeight: 280 }}
           image={require(`../images/${playerData.pictureName}`)}
           title={`${playerData.playerName}`}
         />
@@ -45,51 +46,93 @@ export default function PlayerCard(props: PlayerCardType) {
           <Typography gutterBottom variant="subtitle2">
             {`${playerData.teamName}`}
           </Typography>
-          <Typography gutterBottom variant="subtitle2">
+          {/* <Typography gutterBottom variant="subtitle2">
             Physical:
-          </Typography>
-          <Grid
-            container
-            rowSpacing={1}
-            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-          >
+          </Typography> */}
+          <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
             <Grid item xs={4}>
-              <Item>{`Height: ${playerData.height}`}</Item>
+              <Item>
+                {`Height:`}
+                <br />
+                {playerData.height}
+              </Item>
             </Grid>
             <Grid item xs={4}>
-              <Item>{`Weight: ${playerData.weight}`}</Item>
+              <Item>
+                {`Weight:`}
+                <br />
+                {playerData.weight}
+              </Item>
             </Grid>
             <Grid item xs={4}>
-              <Item>{`BPG: ${playerData.bpg}`}</Item>
+              <Item>
+                {`BPG:`}
+                <br />
+                {playerData.bpg}
+              </Item>
             </Grid>
             <Grid item xs={4}>
-              <Item>{`GP: ${playerData.gp}`}</Item>
+              <Item>
+                {`GP:`}
+                <br />
+                {playerData.gp}
+              </Item>
             </Grid>
             <Grid item xs={4}>
-              <Item>{`Min/G: ${playerData.mpg}`}</Item>
+              <Item>
+                {`Min/G:`}
+                <br />
+                {playerData.mpg}
+              </Item>
             </Grid>
             <Grid item xs={4}>
-              <Item>{`PPG: ${playerData.ppg}`}</Item>
-            </Grid>
-
-            <Grid item xs={4}>
-              <Item>{`RPG: ${playerData.rpg}`}</Item>
-            </Grid>
-            <Grid item xs={4}>
-              <Item>{`FT: ${playerData.ft}`}</Item>
+              <Item>
+                {`PPG:`}
+                <br />
+                {playerData.ppg}
+              </Item>
             </Grid>
             <Grid item xs={4}>
-              <Item>{`APG: ${playerData.apg}`}</Item>
-            </Grid>
-
-            <Grid item xs={4}>
-              <Item>{`3PT%: ${playerData.threePt}`}</Item>
-            </Grid>
-            <Grid item xs={4}>
-              <Item>{`SPG: ${playerData.spg}`}</Item>
+              <Item>
+                {`RPG:`}
+                <br />
+                {playerData.rpg}
+              </Item>
             </Grid>
             <Grid item xs={4}>
-              <Item>{`TOPG: ${playerData.topg}`}</Item>
+              <Item>
+                {`FT:`}
+                <br />
+                {playerData.ft}
+              </Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>
+                {`APG:`}
+                <br />
+                {playerData.apg}
+              </Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>
+                {`3PT%:`}
+                <br />
+                {playerData.threePt}
+              </Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>
+                {`SPG:`}
+                <br />
+                {playerData.spg}
+              </Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>
+                {`TOPG:`}
+                <br />
+                {playerData.topg}
+              </Item>
             </Grid>
           </Grid>
         </CardContent>

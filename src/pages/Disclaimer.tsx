@@ -183,6 +183,119 @@ export default function Disclaimer() {
             </p>
             <Divider />
 
+            <h3>Potential Risk or Discomforts:</h3>
+            <Divider />
+            <p>
+              The only potential risk involved with this study is a breach of
+              confidentiality. The research team is taking every precaution
+              necessary, including coding of the data and excluding personal
+              identifiers from the data set. This will help us ensure
+              confidentiality is maintained throughout the study.
+            </p>
+            <Divider />
+            <h3>Confidentiality, Use and Storage of Data:</h3>
+            <Divider />
+            <p>
+              All data collected and contained in the study will be treated as
+              confidential, and only the Principal Investigator and student lead
+              will have access to the data. You consent to have your data used
+              for the purpose of research in the form of a thesis, as well as
+              academic outputs such as: presentations, conferences, and peer
+              reviewed publications. All results of the study will be presented
+              as aggregate data, and no individual-level data will EVER be
+              presented. In order to ensure the confidentiality of data both
+              during the conduct of the research and in the release of its
+              findings, participants identity will be replaced with a unique
+              alpha numeric code to anonymize all participants in the dataset,
+              making it impossible to trace any data back to a specific
+              individual. However, please note that confidentiality cannot be
+              guaranteed while data are in transit over the Internet. All
+              qualitative and quantitative data will be compiled and stored on
+              secure servers, password protected computers and files that only
+              the student lead - Mr. Garrett Blakey, and principal investigator
+              - Dr. Nick Wattie, will have access to. No individual data will be
+              presented during the dissemination of the results. Data will be
+              stored for up to 5 years, after which point data will be destroyed
+              (I.E. all electronic files and data will be permanently deleted).
+              If you request a report, you will only have access to your
+              individual data once the data analysis procedure is finished.
+            </p>
+            <p>
+              Your privacy shall be respected. No information about your
+              identity will be shared or published without your permission,
+              unless required by law. Confidentiality will be provided to the
+              fullest extent possible by law, professional practice, and ethical
+              codes of conduct. Please note that confidentiality cannot be
+              guaranteed while data is in transit over the Internet.
+            </p>
+            <p>
+              This research study includes the collection of demographic data
+              which will be aggregated (not individually presented) in an effort
+              to protect your anonymity. Consistent with Statistics Canada
+              Research Data Center guidelines for ensuring confidentiality in
+              data, no cell sizes less than 5 will be reported or used in the
+              description and analysis of the data. This practice further
+              ensures that it is extremely difficult and improbable to trace any
+              data back to a specific individual.
+            </p>
+            <p>
+              All information collected during this study, including your
+              personal information and email address, will be kept confidential
+              and will not be shared with anyone outside the study unless
+              required by law. You will not be named in any reports,
+              publications, or presentations that may come from this study.
+            </p>
+            <Divider />
+            <h3>Voluntary Participation:</h3>
+            <Divider />
+            <p>
+              Your participation in this study is voluntary and you may partake
+              in only those aspects of the study in which you feel comfortable.
+              You may also decide not to be in this study, or to be in the study
+              now, and then change your mind later. You may leave the study at
+              any time. You will be given information that is relevant to your
+              decision to continue or withdraw from participation. Such
+              information will need to be subsequently provided.
+            </p>
+            <p>
+              You may refuse to answer any question you do not want to answer,
+              or not answer an interview question by saying, 'pass'.
+            </p>
+            <Divider />
+            <h3>Right to Withdraw:</h3>
+            <Divider />
+            <p>
+              You may stop participating in the study at any point during data
+              collection, for any reason, if you so decide. In some research
+              projects, the withdrawal of data may not be feasible, since the
+              data must be anonymized and added to a data pool. Therefore, once
+              data collection is complete, you may withdraw your data from this
+              study for any reason until May 31 st , 2025. Your decision to stop
+              participating in the study, or refusal to answer particular
+              questions will not affect your relationship with the Principal
+              Investigator, student lead, or Ontario Tech University. Note that
+              if you withdraw from the study at any point your data will be
+              immediately and permanently deleted.
+            </p>
+            <Divider />
+            <h3>Conflict of Interest:</h3>
+            <Divider />
+            <p>
+              Researchers have an interest in completing this study. Their
+              interests should not influence your decision to participate in
+              this study.
+            </p>
+            <Divider />
+            <h3>Compensation, Reimbursement, Incentives:</h3>
+            <Divider />
+            <p>
+              All participants who complete the entire research study will be
+              entered into a draw to win one of three 50$ gift cards (choice of
+              Starbucks, Amazon, or a VISA gift card). Those who wish to enter
+              the draw must include their email below.
+            </p>
+            <Divider />
+
             {/* Potential Risk or Discomforts, Confidentiality, Use and Storage of Data sections go here */}
 
             {/* Voluntary Participation, Right to Withdraw, Conflict of Interest, Compensation, Reimbursement, Incentives sections go here */}
@@ -199,7 +312,42 @@ export default function Disclaimer() {
               to others.
             </p>
             <Divider />
-
+            <h3>Participant Rights and Concerns:</h3>
+            <Divider />
+            <p>
+              Please read this consent form carefully and feel free to ask the
+              researcher any questions that you might have about the study. If
+              you have any questions about your rights as a participant in this
+              study, complaints, or adverse events, please contact the Research
+              Ethics Office at (905) 721- 8668 ext. 3693 or at{" "}
+              <a className="email" href="mailto:researchethics@ontariotechu.ca">
+                researchethics@ontariotechu.ca
+              </a>
+              .
+            </p>
+            <p>
+              If you have any questions concerning the research study or
+              experience any discomfort related to the study, please contact the
+              researcher, Garrett Blakey at{" "}
+              <a
+                className="email"
+                href="mailto:garrett.blakey@ontariotechu.net"
+              >
+                garrett.blakey@ontariotechu.net
+              </a>
+              , or Dr. Nick Wattie at{" "}
+              <a className="email" href="mailto:nick.wattie@ontariotechu.net">
+                nick.wattie@ontariotechu.net
+              </a>
+            </p>
+            <p>
+              By signing this form you do not give up any of your legal rights
+              against the investigators, sponsor or involved institutions for
+              compensation, nor does this form relieve the investigators,
+              sponsor or involved institutions of their legal and professional
+              responsibilities.
+            </p>
+            <Divider />
             {/* Participant Rights and Concerns sections go here */}
 
             <Divider />

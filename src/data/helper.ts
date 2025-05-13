@@ -1,7 +1,7 @@
 import { PlayerResults } from "../types/playerResults";
 import { Player } from "../types/player";
 import { Results } from "../context/ResultContext";
-import { postData, postPlayerResults } from "./api";
+import { postData } from "./api";
 
 export const getPlayerPhoto = (player: Player) => {
   try {

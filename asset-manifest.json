@@ -1,10 +1,23 @@
 {
   "files": {
-    "main.css": "/basketballProject/static/css/main.9acb40b6.css",
-    "main.js": "/basketballProject/static/js/main.b0c0e2d6.js",
+    "main.css": "/basketballProject/static/css/main.df81ac7f.css",
+    "main.js": "/basketballProject/static/js/main.efaceb87.js",
     "static/js/453.49831b4c.chunk.js": "/basketballProject/static/js/453.49831b4c.chunk.js",
     "static/media/player.jpg": "/basketballProject/static/media/player.0591614fe94373546cb2.jpg",
+    "static/media/Newell.png": "/basketballProject/static/media/Newell.2f214dcfc619223380b3.png",
     "static/media/player.webp": "/basketballProject/static/media/player.f6a4b1edbca54e283e25.webp",
+    "static/media/Johnson.png": "/basketballProject/static/media/Johnson.6a9af8e2a83d307f0f93.png",
+    "static/media/Bailey.webp": "/basketballProject/static/media/Bailey.0654c4f5062236afa35b.webp",
+    "static/media/Richardson.png": "/basketballProject/static/media/Richardson.fa2ba97f6c929ef75f8e.png",
+    "static/media/Bryant.png": "/basketballProject/static/media/Bryant.f4e15b42e568e8f36f4f.png",
+    "static/media/Fears.png": "/basketballProject/static/media/Fears.a1c65b87c554184aa2b1.png",
+    "static/media/Mcneely.png": "/basketballProject/static/media/Mcneely.e9bf785b8183d95a7ab5.png",
+    "static/media/edgecombe.png": "/basketballProject/static/media/edgecombe.0b2167669d90f95180d3.png",
+    "static/media/Maluach.png": "/basketballProject/static/media/Maluach.82f5201412a0a46d36b3.png",
+    "static/media/Flagg.png": "/basketballProject/static/media/Flagg.421628d6c71f17c05010.png",
+    "static/media/Knueppel.png": "/basketballProject/static/media/Knueppel.f91e322595c2ca47050f.png",
+    "static/media/Jakucionis.png": "/basketballProject/static/media/Jakucionis.1937005005cc7e2aee9e.png",
+    "static/media/Queen.png": "/basketballProject/static/media/Queen.cd612f4ee8f7da739d6b.png",
     "static/media/williams.jpg": "/basketballProject/static/media/williams.7ffbb272cddca7568905.jpg",
     "static/media/holland.png": "/basketballProject/static/media/holland.f63fa9a9aa7ab6a8d83d.png",
     "static/media/shepphard.png": "/basketballProject/static/media/shepphard.244ef9048f7edaaeb778.png",
@@ -14,16 +27,17 @@
     "static/media/carter.png": "/basketballProject/static/media/carter.55e2e9ac393ca7975b93.png",
     "static/media/chomche.jpg": "/basketballProject/static/media/chomche.166bef59875c02810699.jpg",
     "static/media/filipowski.png": "/basketballProject/static/media/filipowski.3279615eea966f1ba640.png",
+    "static/media/Harper.webp": "/basketballProject/static/media/Harper.b0b7ec88cb1706d57031.webp",
     "static/media/buzelis.jpg": "/basketballProject/static/media/buzelis.a913483a5c4f8812f101.jpg",
     "static/media/furphy.jpg": "/basketballProject/static/media/furphy.769a49068b7db35f2a6d.jpg",
     "static/media/rissacher.jpg": "/basketballProject/static/media/rissacher.291852e4f2505358b3d0.jpg",
     "index.html": "/basketballProject/index.html",
-    "main.9acb40b6.css.map": "/basketballProject/static/css/main.9acb40b6.css.map",
-    "main.b0c0e2d6.js.map": "/basketballProject/static/js/main.b0c0e2d6.js.map",
+    "main.df81ac7f.css.map": "/basketballProject/static/css/main.df81ac7f.css.map",
+    "main.efaceb87.js.map": "/basketballProject/static/js/main.efaceb87.js.map",
     "453.49831b4c.chunk.js.map": "/basketballProject/static/js/453.49831b4c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9acb40b6.css",
-    "static/js/main.b0c0e2d6.js"
+    "static/css/main.df81ac7f.css",
+    "static/js/main.efaceb87.js"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/basketballProject/static/css/main.df81ac7f.css",
-    "main.js": "/basketballProject/static/js/main.efaceb87.js",
+    "main.js": "/basketballProject/static/js/main.87a1cea2.js",
     "static/js/453.49831b4c.chunk.js": "/basketballProject/static/js/453.49831b4c.chunk.js",
     "static/media/player.jpg": "/basketballProject/static/media/player.0591614fe94373546cb2.jpg",
     "static/media/Newell.png": "/basketballProject/static/media/Newell.2f214dcfc619223380b3.png",
@@ -33,11 +33,11 @@
     "static/media/rissacher.jpg": "/basketballProject/static/media/rissacher.291852e4f2505358b3d0.jpg",
     "index.html": "/basketballProject/index.html",
     "main.df81ac7f.css.map": "/basketballProject/static/css/main.df81ac7f.css.map",
-    "main.efaceb87.js.map": "/basketballProject/static/js/main.efaceb87.js.map",
+    "main.87a1cea2.js.map": "/basketballProject/static/js/main.87a1cea2.js.map",
     "453.49831b4c.chunk.js.map": "/basketballProject/static/js/453.49831b4c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.df81ac7f.css",
-    "static/js/main.efaceb87.js"
+    "static/js/main.87a1cea2.js"
   ]
 }

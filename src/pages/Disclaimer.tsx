@@ -289,10 +289,8 @@ export default function Disclaimer() {
             <h3>Compensation, Reimbursement, Incentives:</h3>
             <Divider />
             <p>
-              All participants who complete the entire research study will be
-              entered into a draw to win one of three 50$ gift cards (choice of
-              Starbucks, Amazon, or a VISA gift card). Those who wish to enter
-              the draw must include their email below.
+              There is no compensation for this project for participants outside
+              of contributing to research to advance the field.
             </p>
             <Divider />
 

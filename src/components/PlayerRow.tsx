@@ -120,7 +120,7 @@ export default function PlayerRow() {
       <Typography gutterBottom variant="subtitle1" className="headerText">
         Ignoring any of your current (or other current) team needs or draft
         strategy, which of these two players do you think should be drafted
-        higher?
+        higher? Please click on your selection.
       </Typography>
       <ProgressBar
         comparisonsleft={playerComparisons.length}
